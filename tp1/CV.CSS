@@ -1,0 +1,27 @@
+
+          body{
+            background: #3177a0;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #db7b4b, #3f8ab6);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #db875c, #3f8dbb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            font-family: 'Times new Roman';
+            font-size: 16px;
+            margin:  auto;
+            max-width: 800px;   
+          }
+          table {
+            border: thin solid #000000;
+            border-collapse: collapse;
+            }
+            th {
+            font-family: monospace;
+            border: thin solid #bb340b;
+            }
+            td {
+            font-family: 'Times new Roman';
+            border: thin solid #000000;
+            text-align: center;
+            }
+            caption {
+            font-family: 'Times new Roman';
+            }
