@@ -6,28 +6,51 @@
         <title>TP2</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="fiche.css" />
+        <script type="text/javascript" src="formulaire.js"></script> 
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
         
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
         <!--<link rel="stylesheet" href="style.css">-->
         <!--<script src="js/main.js"></script>-->
+        
     </head>
     <body>        
-        <h1>tp2</h1>
+       <h> <p class="title"> Saisie d'une fiche "Personne" </p> </h>
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+        <p></p>
+        
+        <form id="formAW" onsubmit="validation()">
+
+            <p> <label for="Nom">Nom</label>
+            <input type="text" id="Nom" name="Nom" placeholder="ex: Setra " class="inputAW"/>  <br/>  </p>
+
+            <p><label for="Prénom">Prénom</label>
+            <input type="text" id="Prénom" name="Prénom" placeholder="ex: Douaa " class="inputAW"/>  <br/>  </p>
+
+            <p><label for="Date">Date de naissance</label>
+            <input type="date" id="Date" name="Date" placeholder="ex: 10/10/2010" class="inputAW" maxlength="20"/> <br/>  </p>
+
+            <p><label for="Ville">Ville</label>
+            <input type="text" id="Ville" name="Ville" placeholder="ex: Paris" maxlength=30 class="inputAW"/>
+            <br/> </p>
+
+            <p><label for="Adresse">Adresse</label>
+            <input type="text" id="Adresse" name="Adresse" placeholder=" "  class="inputAW"/>  <br/> </p>
+            
+            <p> <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" placeholder="ex: aa@mail.fr" class="inputAW"/>
+              <br/> </p>
+
+              <p>
+              <input type="button" value="Valider" onclick="validation()"/>
+              </p>
+              
+              </form>
+            
+            <div id="error"></div>
+            <div id="resultat"></div>
     </body>
 </html>
