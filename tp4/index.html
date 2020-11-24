@@ -9,14 +9,28 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/form-jquery-validation.js"></script>
+        <script src="js/gps.js"></script>
+        <script src="js/store.js"></script>
+
 
         <style>
           body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+                           
+              font-family:'Times New Roman', Times, serif;
               font-size: 16px;
               margin: 0 auto;
-              max-width: 800px;              
+              max-width: 800px; 
+              background: #E8CBC0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
           }
         </style>
         
@@ -25,9 +39,137 @@
         <!--<script src="main.js"></script>-->
     </head>
     <body>        
-        <h1>TP4</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
-</html>
+       <h1  style="color:white;"> <U>Ajout d'un contact</U>  </h1> 
+          <p> Veuillez renseigner les informations ci-dessous</p>
+          <!-- Add your site or application content here -->
+  
+              <div class="container" >
+               
+              <form> 
+                    
+                    <div class="form-group row">
+                      <label for="nom" class="form-group col-2">Nom</label>
+                      <div class="form-group col">
+                       <input type="text" class="form-control" placeholder="Enter votre nom" id="nom">
+                    </div>
+                    <div class="form-group col-1" id="nomCounter"> 
+                      0 car.
+                    </div>
+                  </div>
+  
+                    <div class="form-group row">
+                      <label for="prénom" class="form-group col-2">Prénom</label>
+                      <div class="form-group col">
+                      <input type="text" class="form-control" placeholder="Enter votre prénom" id="prénom" >
+                    </div>
+                    <div class="form-group col-1" id="prénomCounter"> 
+                      0 car.
+                  </div>
+                </div>
+  
+                    <div class="form-group row">
+                      <label for="date"class="form-group col-2" >Date de naissance </label>
+                      <div class="form-group col">
+                      <input type="date" class="form-control"placeholder="JJ/MM/AAAA" id="date">
+                    </div>
+                    <div class="form-group col-1" id="dateCounter"> 
+                      0 car.
+                    </div>
+                  </div>
+  
+              
+                    <div class="form-group row">
+                      <label for="adresse"class="form-group col-2">Adresse postale</label>
+                      <div class="form-group col">
+                       <input type="text" class="form-control" placeholder="Paris" id="adresse" >
+                       <div id="map">
+                        <img
+                        alt="map"
+                        width="300"
+                        src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"
+                      /> 
+                    </div>
+                  </div>
+                      <div class="form-group col-1" > 
+                      <button class="btn btn-warning" type="button" id="gps">📍 GPS</button>
+                    </div>
+                    <div class="form-group col-1" id="adresseCounter">
+                    0 car.
+                  </div>
+                </div>
+
+                    <div class="form-group row">
+                      <label for="mail" class="form-group col-2">Adresse mail</label>
+                      <div class="form-group col">
+                      <input type="mail" class="form-control" placeholder="dodo@gmail.com" id="mail" >
+                    </div>
+                    <div class="form-group col-1" id="mailCounter"> 
+                      0 car.
+                    </div>
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col"> 
+                <button type="submit" value="Valider" id="valider" class="btn btn-primary">Ajouter</button>  
+              </div> 
+              </div>
+    
+      </form>
+
+      <h1  style="color:white;"><U>Liste des contacts </U> </h1> 
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de naissance</th>
+            <th>Adresse</th>
+            <th>Mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>oConnor</td>
+            <td>Sarah</td>
+            <td>21/01/2000</td>
+            <td>
+              <a href="https://maps.google.com/?q=Paris">Paris</a>
+            </td>
+            <td>
+              <a href="mailto:sarah.oconnor@blabla.com">sarah.oconnor@blabla.com</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Vandamme</td>
+            <td>JL</td>
+            <td>01/01/1950</td>
+            <td>
+              <a href="https://maps.google.com/?q=Bali">Bali</a>
+            </td>
+            <td>
+              <a href="mailto:jlv@blabla.com">jlv@blabla.com</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Votre formulaire</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Veuillez remplir tous les champs</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Enregistrer</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </body>
+  </html>
